@@ -20,10 +20,12 @@ const ProductCard = ({id,artist,name,stock,price}) => {
             <span className="flex flex-row m-3">
             <h1 className="text-2xl text-red-900">{price} €/TTC</h1>
             <button className="bg-slate-400 p-3 rounded-md ml-8 mb-5 hover:scale-105 hover:text-red-800 duration-200"
-            onClick={()=>dispatch(addArticle({id:id,
+            onClick={()=>{const idAddCart = Date.now();
+                        dispatch(addArticle({id:id,
+                                             idAddCart:idAddCart,
                                              artist: artist,
                                              name: name,
-                                             price: price}))}>Add To Cart</button>
+                                             price: price}))}}>Add To Cart</button>
             </span>
             </span>
         </div>
